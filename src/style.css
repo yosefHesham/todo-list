@@ -1,8 +1,16 @@
 
-
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
 main {
-  width: 80%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .list-lable {
@@ -10,16 +18,49 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+.today {
+  margin-left: 15px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+svg {
+  margin-right: 15px;
+  cursor: pointer;
+}
+hr {
+  color: rgba(0, 0, 0, 0.1);
+  opacity: 0.2;
+  margin: 0
+}
 .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 12px;
   row-gap: 12px;
+  width: 100%;
 }
-
 
 .grow {
   margin-left: auto;
-  cursor:  pointer;
+}
+
+#todo {
+  border: none;
+  padding: 10px  2.5%;
+  color: gray;
+  font-style: italic;
+  width: 95%;
+}
+.clear {
+  text-align: center;
+  background-color: whitesmoke;
+  color: gray;
+  cursor: pointer;
+  padding: 2% 0 ;
+
 }
