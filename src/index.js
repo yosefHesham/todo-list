@@ -1,27 +1,28 @@
-import "../src/style.css"
-const todolist = document.querySelector(".list")
-const todos = [ {
-  description:"study linked list",
-  completed:true,
-  index : 0,
-  
+import './style.css';
+
+const todolist = document.querySelector('.list');
+const todos = [{
+  description: 'study linked list',
+  completed: true,
+  index: 0,
+
 },
 {
-  description:"implement linked list with js",
-  completed:false,
-  index : 1,
+  description: 'implement linked list with js',
+  completed: false,
+  index: 1,
 },
 {
-  description:"study stack and queue",
-  completed:false,
-  index : 2,
-}
+  description: 'study stack and queue',
+  completed: false,
+  index: 2,
+},
 ];
 
 const renderItems = () => {
-  for(let i = 0; i < todos.length; i+=1) {
+  for (let i = 0; i < todos.length; i += 1) {
     const item = todos[i];
-    const itemTemp = document.createElement("itemTemp");
+    const itemTemp = document.createElement('itemTemp');
     itemTemp.innerHTML = `<div class="item-wrapper">
     <div class="todo-item">
     <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
@@ -40,15 +41,10 @@ const renderItems = () => {
       />
     </svg>
   </div>
-  ${todos.length - 1 === item.index ? `` : `<hr>`}
+  ${todos.length - 1 === item.index ? '' : '<hr>'}
   </div>
   `;
-  console.log(itemTemp)
-  console.log(itemTemp.firstChild)
-  todolist.appendChild(itemTemp.firstChild)
-  
+    todolist.appendChild(itemTemp.firstChild);
   }
-
-}
-window.onload = renderItems()
-
+};
+window.onload = renderItems();

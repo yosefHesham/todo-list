@@ -5,6 +5,7 @@ body {
   justify-content: center;
   height: 100vh;
 }
+
 main {
   width: 95%;
   display: flex;
@@ -18,6 +19,7 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+
 .today {
   margin-left: 15px;
 }
@@ -27,15 +29,18 @@ main {
   flex-direction: column;
   width: 100%;
 }
+
 svg {
   margin-right: 15px;
   cursor: pointer;
 }
+
 hr {
   color: rgba(0, 0, 0, 0.1);
   opacity: 0.2;
-  margin: 0
+  margin: 0;
 }
+
 .todo-item {
   display: flex;
   justify-content: space-between;
@@ -56,11 +61,11 @@ hr {
   font-style: italic;
   width: 95%;
 }
+
 .clear {
   text-align: center;
   background-color: whitesmoke;
   color: gray;
   cursor: pointer;
-  padding: 2% 0 ;
-
+  padding: 2% 0;
 }
