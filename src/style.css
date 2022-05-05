@@ -1,3 +1,19 @@
-body {
-  background-color: red;
+
+
+.list {
+  width: 80%;
+  margin: 0 auto;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+
+.grow {
+  margin-left: auto;
+  cursor:  pointer;
 }
