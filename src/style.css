@@ -1,8 +1,14 @@
 
 
-.list {
+main {
   width: 80%;
   margin: 0 auto;
+}
+
+.list-lable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .todo-item {
   display: flex;
