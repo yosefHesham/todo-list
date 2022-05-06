@@ -1,12 +1,9 @@
 import './style.css';
-
+import ToDoItem from '../modules/todo-item.js';
 const todolist = document.querySelector('.list');
-const todos = [{
-  description: 'study linked list',
-  completed: true,
-  index: 0,
+const todos = [ 
+  new ToDoItem(0,"study linked list",false),
 
-},
 {
   description: 'implement linked list with js',
   completed: false,
