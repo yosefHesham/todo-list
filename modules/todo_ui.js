@@ -29,6 +29,7 @@ const createToDo = (description) => {
 }
 
 const renderItems = () => {
+  console.log(ToDoController.todos)
   for (let i = 0; i < ToDoController.todos.length; i += 1) {
     const item = ToDoController.todos[i];
     const itemTemp = document.createElement('itemTemp');
@@ -50,7 +51,7 @@ const renderItems = () => {
       />
     </svg>
   </div>
-  ${todos.length - 1 === item.index ? '' : '<hr>'}
+  ${ToDoController.todos.length - 1 === item.index ? '' : '<hr>'}
   </div>
   `;
     todolist.appendChild(itemTemp.firstChild);

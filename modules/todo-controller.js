@@ -4,20 +4,20 @@ import { createToDo } from "./todo_ui";
 
 class ToDoController {
   static todos = getToDos() ??  []
-   #incremenetor = 1;
+  static #incrementor = 1;
 
   static addTodo = (description) => {
-    console.log("Adding")
-    const newTodo = new ToDoItem(this.incrementor,description)
+   
+    const newTodo = new ToDoItem(this.#incrementor,description)
     this.todos.push(newTodo)
-    this.incrementor ++;
+    this.#incrementor ++;
     storeToDos(this.todos)
     createToDo(description)
   }
   static removeToDo(index) {
-    if(index === this.incrementor) {
+    if(index === this.#incrementor) {
     this.todos.splice(index - 1, 1) 
-    this.incrementor --;
+    this.#incrementor --;
     
     }
    
@@ -27,7 +27,7 @@ class ToDoController {
           }
       });
       this.todos.splice(index - 1, 1) 
-      this.incrementor --;
+      this.#incrementor --;
   }
   storeToDos(this.todos)
 }
