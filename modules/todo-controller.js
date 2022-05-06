@@ -1,7 +1,7 @@
-import { addRemoveListener, configureDeleteListeners } from "./event_listeners";
+import { addRemoveListener, configureDeleteListeners, configureEditItems } from "./event_listeners";
 import { getToDos, storeToDos } from "./storage";
 import ToDoItem from "./todo-item";
-import { createToDo } from "./todo_ui";
+import { createToDo, renderItems } from "./todo_ui";
 
 class ToDoController {
   static todos = getToDos() ??  []
@@ -15,6 +15,8 @@ class ToDoController {
     createToDo(description)
     addRemoveListener()
     configureDeleteListeners()
+    configureEditItems()
+
   }
   static removeToDo(index) {
    
@@ -35,6 +37,22 @@ class ToDoController {
   }
   storeToDos(this.todos)
 }
+static editDescription = (index,description) => {
+  console.log(description)
+    
+ this.todos[index - 1].description = description;
+ console.log(index)
+ console.log(this.todos[index - 1])
+ console.log(this.todos)
+ storeToDos(this.todos);
+ renderItems();
+ addRemoveListener()
+ configureDeleteListeners()
+ configureEditItems()
+
+
+}
+
 }
 
 export default ToDoController;

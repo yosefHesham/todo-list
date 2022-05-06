@@ -31,12 +31,24 @@ const configureDeleteListeners = () => {
     })
   );
 };
+
+const configureEditItems = () => {
+  const edits = document.querySelectorAll(".edit-field")
+  edits.forEach(editField => editField.addEventListener('keypress', (event) => {
+  
+    if(event.key === "Enter") {
+    
+      const parent = event.target.parentElement
+      parent.style.display = "none";
+      ToDoController.editDescription(parseInt(editField.classList[1]),  editField.value )
+    }
+  }));
+}
 inputField.addEventListener("keypress", (event) => {
-  if (event.key == "Enter") {
-    console.log(inputField.value);
+  if (event.key === "Enter") {
     ToDoController.addTodo(inputField.value);
     inputField.value = "";
   }
 });
 
-export { showMoreListener as addRemoveListener, configureDeleteListeners };
+export { showMoreListener as addRemoveListener, configureDeleteListeners, configureEditItems };
