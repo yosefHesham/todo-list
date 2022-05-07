@@ -38,6 +38,14 @@ static changeStatus(index) {
   this.todos[index-1].completed = !this.todos[index - 1].completed;
   storeToDos(this.todos)
 }
+
+static clearCompletedTasks() {
+  
+ this.todos = this.todos.filter(e => !e.completed);
+ console.log(this.todos);
+ storeToDos(this.todos)
+  
+}
 }
 
 export default ToDoController;
