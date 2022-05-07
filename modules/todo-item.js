@@ -1,9 +1,9 @@
 class ToDoItem {
-  constructor(index,description,completed = false) {
+  constructor(index, description, completed = false) {
     this.index = index;
     this.description = description;
-    this.completed = completed
+    this.completed = completed;
   }
 }
 
-export default ToDoItem
+export default ToDoItem;
