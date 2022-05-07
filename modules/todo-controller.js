@@ -34,6 +34,10 @@ static editDescription = (index, description) => {
 
   storeToDos(this.todos);
 }
+static changeStatus(index) {
+  this.todos[index-1].completed = !this.todos[index - 1].completed;
+  storeToDos(this.todos)
+}
 }
 
 export default ToDoController;
