@@ -9,7 +9,7 @@ const renderItems = () => {
     const itemTemp = document.createElement('itemTemp');
     itemTemp.innerHTML = `<div class="item-wrapper item-wrapper${item.index}">
     <div class="todo-item todo-item${item.index}">
-    <input type="checkbox" class="item-check" id="todoItem${item.index}" name="${item.description}" ${item.completed ? "checked":""}/>
+    <input type="checkbox" class="item-check ${item.index}" id="todoItem${item.index}" name="${item.description}" ${item.completed ? "checked":""}/>
 
     <p class="todo-title">${item.description}</p>
     <svg class="grow edit"
@@ -92,7 +92,7 @@ const createToDo = (description) => {
   const itemTemp = document.createElement('itemTemp');
   itemTemp.innerHTML = `<div class="item-wrapper item-wrapper${ToDoController.todos.length}">
   <div class="todo-item">
-  <input type="checkbox" class="item-check" id="todoItem${ToDoController.todos.length}" name="${description}"/>
+  <input type="checkbox" class="item-check ${ToDoController.todos.length}" id="todoItem${ToDoController.todos.length}" name="${description}"/>
 
   <p class="todo-title">${description}</p>
   <svg class="grow edit"
