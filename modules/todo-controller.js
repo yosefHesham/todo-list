@@ -34,17 +34,20 @@ static editDescription = (index, description) => {
 
   storeToDos(this.todos);
 }
+
 static changeStatus(index) {
-  this.todos[index-1].completed = !this.todos[index - 1].completed;
-  storeToDos(this.todos)
+  console.log(index);
+  this.todos[index - 1].completed = !this.todos[index - 1].completed;
+  storeToDos(this.todos);
 }
 
 static clearCompletedTasks() {
-  
- this.todos = this.todos.filter(e => !e.completed);
- console.log(this.todos);
- storeToDos(this.todos)
-  
+  this.todos = this.todos.filter((e) => !e.completed);
+  for (let i = 0; i < this.todos.length; i += 1) {
+    this.todos[i].index = i + 1;
+  }
+  this.#incrementor = this.todos.length;
+  storeToDos(this.todos);
 }
 }
 
