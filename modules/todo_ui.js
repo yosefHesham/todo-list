@@ -1,3 +1,4 @@
+import addCheckBoxListeners from './change_status.js';
 import ToDoController from './todo-controller.js';
 
 const todolist = document.querySelector('.list');
@@ -11,7 +12,7 @@ const renderItems = () => {
     <div class="todo-item todo-item${item.index}">
     <input type="checkbox" class="item-check ${item.index}" id="todoItem${item.index}" name="${item.description}" ${item.completed ? "checked":""}/>
 
-    <p class="todo-title">${item.description}</p>
+    <p class="todo-title ${item.completed ? "compeleted":""}">${item.description}</p>
     <svg class="grow edit"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -124,6 +125,7 @@ const createToDo = (description) => {
   showMoreListener();
   configureDeleteListeners();
   configureEditItems();
+  addCheckBoxListeners()
 };
 
 inputField.addEventListener('keypress', (event) => {
