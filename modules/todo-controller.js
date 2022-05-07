@@ -36,7 +36,6 @@ static editDescription = (index, description) => {
 }
 
 static changeStatus(index) {
-  console.log(index);
   this.todos[index - 1].completed = !this.todos[index - 1].completed;
   storeToDos(this.todos);
 }
