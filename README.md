@@ -1,15 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To DO list
 
-> Description the project.
+> Is a website to manage daily tasks
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML,CSS,JS
+- webpack
 
 ## Live Demo (if available)
 
@@ -25,32 +24,24 @@
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- node and npm installed
 
 ### Setup
+- clone the repo.
+- run npm i to install packages.
 
 ### Install
+- run npm start
 
-### Usage
 
-### Run tests
-
-### Deployment
 
 
 
 ## Authors
 
-👤 **Author1**
+👤 **yosefHesham**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@yosefHesham](https://github.com/yosefHesham)
 
 ## 🤝 Contributing
 
