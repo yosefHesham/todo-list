@@ -13,7 +13,6 @@ const addCheckBoxListeners = () => {
           event.target.nextElementSibling.style.color = 'black';
         }
         ToDoController.changeStatus(Number(event.target.classList[1]));
-        // return;
       });
     }
   });
@@ -31,7 +30,6 @@ const refreshCheckBoxListeners = () => {
         event.target.nextElementSibling.style.color = 'black';
       }
       ToDoController.changeStatus(Number(event.target.classList[1]));
-      // return;
     });
   });
 };
