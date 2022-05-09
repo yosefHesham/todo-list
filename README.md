@@ -12,7 +12,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://yosefhesham.github.io/todo-list/)
+[Live Demo Link](https://yosefhesham.github.io/todo-list/dist)
 
 
 
