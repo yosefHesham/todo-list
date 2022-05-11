@@ -23,7 +23,7 @@ const showMore = (event) => {
  * @param {Event} event
  */
 const deleteTask = (event) => {
-  const parent = event.target.parentNode.parentNode;
+  const parent = event.target.parentElement.parentElement;
   /** @type {HTMLElement}   */
   const list = document.querySelector('.list');
   const arrayNodes = Array.from(list.childNodes);
@@ -39,7 +39,8 @@ const editTask = (event) => {
     /**
      * @type {HTMLElement}
      */
-    const parent = event.target.parentNode;
+    const parent = event.target.parentElement.parentElement;
+    console.log(parent)
     const list = document.querySelector(".list")
     const arrayOfNodes = Array.from(list.childNodes)
     const p = getElement(parent.previousElementSibling, '.todo-title ');
@@ -47,7 +48,7 @@ const editTask = (event) => {
 
     parent.style.display = 'none';
     parent.previousElementSibling.style.display = 'flex';
-    editToDo(arrayOfNodes.indexOf(parent.parentNode), event.target.value);
+    editToDo(arrayOfNodes.indexOf(parent), event.target.value);
   }
 };
 
