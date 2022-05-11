@@ -14,8 +14,8 @@ class ToDoController {
   }
 
   static removeToDo(index) {
-    if (index === this.#incrementor) {
-      this.todos.splice(index - 1, 1);
+    if (index === this.#incrementor - 1) {
+      this.todos.splice(index, 1);
       this.#incrementor -= 1;
     } else {
       this.todos.forEach((todo) => {
@@ -30,13 +30,13 @@ class ToDoController {
   }
 
 static editDescription = (index, description) => {
-  this.todos[index - 1].description = description;
+  this.todos[index].description = description;
 
   storeToDos(this.todos);
 }
 
 static changeStatus(index) {
-  this.todos[index - 1].completed = !this.todos[index - 1].completed;
+  this.todos[index].completed = !this.todos[index].completed;
   storeToDos(this.todos);
 }
 
