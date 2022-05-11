@@ -14,7 +14,22 @@ const getElement = (element, query) => {
  * @param {Event} event
  */
 const showMore = (event) => {
+  if (event.target.classList.contains("edit")) {
+    event.target.parentElement.style.display = "none";
+    event.target.parentElement.nextElementSibling.style.display = "flex";
+  }
+}
 
+/**
+ * @param {Event} event
+ */
+const deleteTask = (event) => {
+  const parent = document.querySelector(
+    `.item-wrapper${deleteButton.classList[1]}`
+  );
+    removeToDo(Number(deleteButton.classList[1]));
+    parent.remove();
+  
 }
 const renderItems = () => {
   todolist.innerHTML = "";
@@ -74,27 +89,14 @@ const showMoreListener = () => {
   const item = document.querySelectorAll(".item-wrapper");
 
   item.forEach((e) =>
-    e.addEventListener("click", (event) => {
-      if (event.target.classList.contains("edit")) {
-        event.target.parentElement.style.display = "none";
-        event.target.parentElement.nextElementSibling.style.display = "flex";
-      }
-    })
+    e.addEventListener("click", showMore)
   );
 };
 
 const configureDeleteListeners = () => {
   const deleteButtons = document.querySelectorAll(".remove-button");
   deleteButtons.forEach((deleteButton) =>
-    deleteButton.addEventListener("click", () => {
-      const parent = document.querySelector(
-        `.item-wrapper${deleteButton.classList[1]}`
-      );
-      if (parent) {
-        removeToDo(Number(deleteButton.classList[1]));
-        parent.remove();
-      }
-    })
+    deleteButton.addEventListener("click", deleteTask)
   );
 };
 
@@ -150,8 +152,9 @@ const createToDo = (description) => {
   checkBox.addEventListener("click",changeStatus)
 
   /** @type {HTMLElement} */
-  const showMore = getElement(itemTemp, ".edit");
-  // showMore.addEventListener("click",)
+  const showMoreElement = getElement(itemTemp, ".item-wrapper");
+  console.log(showMoreElement)
+  showMoreElement.addEventListener("click",showMore)
 
       /** @type {HTMLElement} */
   const deleteButton = getElement(itemTemp, ".remove-button");
