@@ -25,9 +25,9 @@ const showMore = (event) => {
  */
 const deleteTask = (event) => {
   const parent = document.querySelector(
-    `.item-wrapper${deleteButton.classList[1]}`
+    `.item-wrapper${event.target.classList[1]}`
   );
-    removeToDo(Number(deleteButton.classList[1]));
+    removeToDo(Number(event.target.classList[1]));
     parent.remove();
   
 }
@@ -153,11 +153,12 @@ const createToDo = (description) => {
 
   /** @type {HTMLElement} */
   const showMoreElement = getElement(itemTemp, ".item-wrapper");
-  console.log(showMoreElement)
   showMoreElement.addEventListener("click",showMore)
 
       /** @type {HTMLElement} */
   const deleteButton = getElement(itemTemp, ".remove-button");
+
+  deleteButton.addEventListener("click",deleteTask)
 
   /** @type {HTMLElement} */
   const editField = getElement(itemTemp, ".edit-field");
