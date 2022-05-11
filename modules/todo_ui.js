@@ -47,7 +47,7 @@ const removeToDo = (index) => {
 
 const editToDo = (index, description) => {
   ToDoController.editDescription(index, description);
-  renderItems();
+  
 };
 
 const inputField = document.getElementById('todo');
@@ -69,8 +69,8 @@ const configureDeleteListeners = () => {
     const parent = document.querySelector(
       `.item-wrapper${deleteButton.classList[1]}`,
     );
-    removeToDo(Number(deleteButton.classList[1]));
     if (parent) {
+      removeToDo(Number(deleteButton.classList[1]));
       parent.remove();
     }
   }));
