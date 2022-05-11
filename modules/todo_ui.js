@@ -1,6 +1,8 @@
-import {changeStatus } from "./change_status.js";
+import { configureNewAddedItem } from "./configureNewAddedItem.js";
+import ToDoController from "./todo-controller.js";
 import { deleteTask, editTask, showMore } from "./event_listeners.js";
-import {getElement} from "./getElement.js"
+
+
 
 const todolist = document.querySelector(".list");
 /**
@@ -107,24 +109,9 @@ const createToDo = (description) => {
 </div>
 <hr>
 </div>`;
-  /** @type {HTMLElement} */
-  const checkBox = getElement(itemTemp, ".item-check");
-  checkBox.addEventListener("click",changeStatus)
+configureNewAddedItem(itemTemp)
+todolist.appendChild(itemTemp.firstChild);
 
-  /** @type {HTMLElement} */
-  const showMoreElement = getElement(itemTemp, ".item-wrapper");
-  showMoreElement.addEventListener("click",showMore)
-
-      /** @type {HTMLElement} */
-  const deleteButton = getElement(itemTemp, ".remove-button");
-
-  deleteButton.addEventListener("click",deleteTask)
-
-  /** @type {HTMLElement} */
-  const editField = getElement(itemTemp, ".edit-field");
-
-  editField.addEventListener("keypress",editTask)
-  todolist.appendChild(itemTemp.firstChild);
  
 };
 
