@@ -23,10 +23,11 @@ const showMore = (event) => {
  * @param {Event} event
  */
 const deleteTask = (event) => {
-  const parent = document.querySelector(
-    `.item-wrapper${event.target.classList[1]}`,
-  );
-  removeToDo(Number(event.target.classList[1]));
+  const parent = event.target.parentNode.parentNode;
+  /** @type {HTMLElement}   */
+  const list = document.querySelector(".list")
+   const arrayNodes = Array.from(list.childNodes)
+  removeToDo(arrayNodes.indexOf(parent) + 1);
   parent.remove();
 };
 
