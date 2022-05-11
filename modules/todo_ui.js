@@ -1,4 +1,4 @@
-import  configureNewAddedItem  from './configureNewAddedItem.js';
+import configureNewAddedItem from './configureNewAddedItem.js';
 import ToDoController from './todo-controller.js';
 import { deleteTask, editTask, showMore } from './event_listeners.js';
 

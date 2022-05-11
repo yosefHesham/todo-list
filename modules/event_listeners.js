@@ -1,5 +1,5 @@
 import ToDoController from './todo-controller.js';
-import getElement  from './getElement.js';
+import getElement from './getElement.js';
 
 const removeToDo = (index) => {
   ToDoController.removeToDo(index);
@@ -25,8 +25,8 @@ const showMore = (event) => {
 const deleteTask = (event) => {
   const parent = event.target.parentNode.parentNode;
   /** @type {HTMLElement}   */
-  const list = document.querySelector(".list")
-   const arrayNodes = Array.from(list.childNodes)
+  const list = document.querySelector('.list');
+  const arrayNodes = Array.from(list.childNodes);
   removeToDo(arrayNodes.indexOf(parent) + 1);
   parent.remove();
 };

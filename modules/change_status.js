@@ -5,7 +5,6 @@ import ToDoController from './todo-controller.js';
  * @param {Event} event
  */
 export const changeStatus = (event) => {
-  console.log('changing status');
   if (event.target.checked) {
     event.target.nextElementSibling.style.textDecoration = 'line-through';
     event.target.nextElementSibling.style.color = 'gray';

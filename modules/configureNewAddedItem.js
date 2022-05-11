@@ -1,11 +1,11 @@
 import { changeStatus } from './change_status';
-import  getElement  from './getElement';
+import getElement from './getElement';
 import { deleteTask, editTask, showMore } from './event_listeners.js';
 
 /**
  * @param {HTMLElement} newItem
  */
- const configureNewAddedItem = (newItem) => {
+const configureNewAddedItem = (newItem) => {
   /** @type {HTMLElement} */
   const checkBox = getElement(newItem, '.item-check');
   checkBox.addEventListener('click', changeStatus);
@@ -25,4 +25,4 @@ import { deleteTask, editTask, showMore } from './event_listeners.js';
   editField.addEventListener('keypress', editTask);
 };
 
-export default configureNewAddedItem
+export default configureNewAddedItem;

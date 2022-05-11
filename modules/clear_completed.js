@@ -1,6 +1,8 @@
 import { refreshCheckBoxListeners } from './change_status.js';
 import ToDoController from './todo-controller.js';
-import { configureDeleteListeners, configureEditItems, renderItems, showMoreListener } from './todo_ui.js';
+import {
+  configureDeleteListeners, configureEditItems, renderItems, showMoreListener,
+} from './todo_ui.js';
 
 const clearButton = document.querySelector('.clear');
 
@@ -9,7 +11,7 @@ clearButton.addEventListener('click', () => {
 
   renderItems();
   refreshCheckBoxListeners();
-  configureDeleteListeners()
-  configureEditItems()
-  showMoreListener()
+  configureDeleteListeners();
+  configureEditItems();
+  showMoreListener();
 });
