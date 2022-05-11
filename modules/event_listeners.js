@@ -27,7 +27,7 @@ const deleteTask = (event) => {
   /** @type {HTMLElement}   */
   const list = document.querySelector('.list');
   const arrayNodes = Array.from(list.childNodes);
-  removeToDo(arrayNodes.indexOf(parent) + 1);
+  removeToDo(arrayNodes.indexOf(parent));
   parent.remove();
 };
 
@@ -47,7 +47,7 @@ const editTask = (event) => {
 
     parent.style.display = 'none';
     parent.previousElementSibling.style.display = 'flex';
-    editToDo(arrayOfNodes.indexOf(parent.parentNode) + 1, event.target.value);
+    editToDo(arrayOfNodes.indexOf(parent.parentNode), event.target.value);
   }
 };
 
