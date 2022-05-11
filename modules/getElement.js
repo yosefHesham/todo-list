@@ -1,3 +1,3 @@
-export const getElement = (element, query) => {
-  return element.querySelector(query);
-};
+const getElement = (element, query) => element.querySelector(query);
+
+export default getElement
