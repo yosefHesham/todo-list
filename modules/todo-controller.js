@@ -23,7 +23,7 @@ class ToDoController {
           todo.index -= 1;
         }
       });
-      this.todos.splice(index - 1, 1);
+      this.todos.splice(index, 1);
       this.#incrementor -= 1;
     }
     storeToDos(this.todos);
