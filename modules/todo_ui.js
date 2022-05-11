@@ -1,57 +1,14 @@
-import { addCheckBoxListeners, changeStatus } from "./change_status.js";
-import ToDoController from "./todo-controller.js";
+import {changeStatus } from "./change_status.js";
+import { deleteTask, editTask, showMore } from "./event_listeners.js";
+import {getElement} from "./getElement.js"
 
 const todolist = document.querySelector(".list");
 /**
  *
  * @param {HTMLElement} element
  */
-const getElement = (element, query) => {
-  return element.querySelector(query);
-};
 
-/**
- * @param {Event} event
- */
-const showMore = (event) => {
-  if (event.target.classList.contains("edit")) {
-    event.target.parentElement.style.display = "none";
-    event.target.parentElement.nextElementSibling.style.display = "flex";
-  }
-}
 
-/**
- * @param {Event} event
- */
-const deleteTask = (event) => {
-  const parent = document.querySelector(
-    `.item-wrapper${event.target.classList[1]}`
-  );
-    removeToDo(Number(event.target.classList[1]));
-    parent.remove();
-  
-}
-
-/**
- * @param {Event} event
- */
- const editTask = (event) => {
-  if (event.key === "Enter") {
-    /**
-     * @type {HTMLElement}
-     */
-    const parent = event.target.parentElement;
-    const p = getElement(parent.previousElementSibling,".todo-title ")
-    p.textContent = event.target.value
-
-    parent.style.display = "none";
-    parent.previousElementSibling.style.display = "flex"
-
-    
-    editToDo(Number(event.target.classList[1]), event.target.value);
-  } 
-  
-}
 const renderItems = () => {
   todolist.innerHTML = "";
   for (let i = 0; i < ToDoController.todos.length; i += 1) {
@@ -93,14 +50,6 @@ const renderItems = () => {
   
     todolist.appendChild(itemTemp.firstChild);
   }
-};
-
-const removeToDo = (index) => {
-  ToDoController.removeToDo(index);
-};
-
-const editToDo = (index, description) => {
-  ToDoController.editDescription(index, description);
 };
 
 const inputField = document.getElementById("todo");
@@ -189,8 +138,6 @@ inputField.addEventListener("keypress", (event) => {
 export {
   renderItems,
   createToDo,
-  removeToDo,
-  editToDo,
   configureDeleteListeners,
   configureEditItems,
   showMoreListener,
