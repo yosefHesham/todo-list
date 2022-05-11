@@ -31,6 +31,27 @@ const deleteTask = (event) => {
     parent.remove();
   
 }
+
+/**
+ * @param {Event} event
+ */
+ const editTask = (event) => {
+  if (event.key === "Enter") {
+    /**
+     * @type {HTMLElement}
+     */
+    const parent = event.target.parentElement;
+    const p = getElement(parent.previousElementSibling,".todo-title ")
+    p.textContent = event.target.value
+
+    parent.style.display = "none";
+    parent.previousElementSibling.style.display = "flex"
+
+    
+    editToDo(Number(event.target.classList[1]), event.target.value);
+  } 
+  
+}
 const renderItems = () => {
   todolist.innerHTML = "";
   for (let i = 0; i < ToDoController.todos.length; i += 1) {
@@ -41,8 +62,7 @@ const renderItems = () => {
     <input type="checkbox" class="item-check ${item.index}" id="todoItem${item.index
       }" name="${item.description}" ${item.completed ? "checked" : ""}/>
 
-    <p class="todo-title ${item.completed ? "compeleted" : ""}">${item.description
-      }</p>
+    <p class="todo-title ${item.completed ? "compeleted" : ""}">${item.description}</p>
     <svg class="grow edit"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -103,13 +123,7 @@ const configureDeleteListeners = () => {
 const configureEditItems = () => {
   const edits = document.querySelectorAll(".edit-field");
   edits.forEach((editField) =>
-    editField.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
-        const parent = event.target.parentElement;
-        parent.style.display = "none";
-        editToDo(Number(editField.classList[1]), editField.value);
-      }
-    })
+    editField.addEventListener("keypress", editTask)
   );
 };
 
@@ -120,11 +134,10 @@ const createToDo = (description) => {
   itemTemp.innerHTML = `<div class="item-wrapper item-wrapper${ToDoController.todos.length}">
   <div class="todo-item">
   <input type="checkbox" class="item-check ${ToDoController.todos.length}" id="todoItem${ToDoController.todos.length}" name="${description}"/>
-
   <p class="todo-title">${description}</p>
   <svg class="grow edit"
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
+    width="16"firstChildfirstChild
     height="16"
     fill="currentColor"
     class="bi bi-three-dots-vertical"
@@ -135,9 +148,8 @@ const createToDo = (description) => {
     />
   </svg>
 </div>
-
 <div class="todo-item hidden hidden${ToDoController.todos.length}">
-  <input type="text" class="edit-field ${ToDoController.todos.length}" id="todo" name="todo-name" placeholder="Edit" value="${description}">
+<input type="text" class="edit-field ${ToDoController.todos.length}" id="todo" name="todo-name" placeholder="Edit" value="${description}"/>
   <svg class="remove-button ${ToDoController.todos.length}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
   <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -145,8 +157,7 @@ const createToDo = (description) => {
   
 </div>
 <hr>
-</div>
-`;
+</div>`;
   /** @type {HTMLElement} */
   const checkBox = getElement(itemTemp, ".item-check");
   checkBox.addEventListener("click",changeStatus)
@@ -163,8 +174,7 @@ const createToDo = (description) => {
   /** @type {HTMLElement} */
   const editField = getElement(itemTemp, ".edit-field");
 
-  checkBox.addEventListener;
-
+  editField.addEventListener("keypress",editTask)
   todolist.appendChild(itemTemp.firstChild);
  
 };
