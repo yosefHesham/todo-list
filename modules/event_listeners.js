@@ -39,8 +39,7 @@ const editTask = (event) => {
     /**
      * @type {HTMLElement}
      */
-    const parent = event.target.parentElement.parentElement;
-    console.log(parent)
+    const parent = event.target.parentElement;
     const list = document.querySelector(".list")
     const arrayOfNodes = Array.from(list.childNodes)
     const p = getElement(parent.previousElementSibling, '.todo-title ');
@@ -48,7 +47,7 @@ const editTask = (event) => {
 
     parent.style.display = 'none';
     parent.previousElementSibling.style.display = 'flex';
-    editToDo(arrayOfNodes.indexOf(parent), event.target.value);
+    editToDo(arrayOfNodes.indexOf(parent.parentElement ), event.target.value);
   }
 };
 
