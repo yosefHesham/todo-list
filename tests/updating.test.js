@@ -4,17 +4,17 @@
  */
 import ToDoController from "../modules/todo-controller";
 
-describe("Testing edit description", ()=> {
+describe("Testing edit description", () => {
   // arrange
   const newDescription = "new description";
-  const spyEdit = jest.spyOn(ToDoController,"editDescription")
+  const spyEdit = jest.spyOn(ToDoController, "editDescription")
   beforeEach(() => {
     ToDoController.addTodo("newItem");
     ToDoController.editDescription(0, newDescription)
   })
-  
+
   //assert
-  test("edit function  should be called",()=> {
+  test("edit function  should be called", () => {
     expect(spyEdit).toHaveBeenCalled()
   });
 
@@ -22,4 +22,26 @@ describe("Testing edit description", ()=> {
     expect(ToDoController.todos[0].description).toBe(newDescription);
   });
 
+})
+
+describe("Editing the status of the description", () => {
+  // arrange 
+  const description = "new description";
+  const spyStatus = jest.spyOn(ToDoController, 'changeStatus');
+  let oldStatus = false
+  beforeEach(() => {
+    ToDoController.addTodo("newItem");
+    oldStatus = ToDoController.todos[0].completed
+    ToDoController.changeStatus(0);
+
+  })
+
+  // assert
+  test("It should call update status function", () => {
+    expect(spyStatus).toHaveBeenCalled();
+  });
+
+  test("It should update status", () => {
+    expect(ToDoController.todos[0].completed).toBe(!oldStatus);
+  })
 })
