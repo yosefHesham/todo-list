@@ -3,13 +3,16 @@
  */
 import ToDoController from '../modules/todo-controller';
 
-describe('Testing adding and removing', () => {
+document.body.innerHTML = '<div class="list"></div>';
+
+describe('Testing adding', () => {
   // arrange
   const taskDescription = 'iam new item';
   const spy = jest.spyOn(ToDoController, 'addTodo');
-
-  // act
-  ToDoController.addTodo(taskDescription);
+  beforeEach(() => {
+    // act
+    ToDoController.addTodo(taskDescription);
+  });
 
   // assert
   test('add to do should be called', () => {
@@ -21,20 +24,23 @@ describe('Testing adding and removing', () => {
   });
 });
 
-describe('Testing deleting', () => {
+describe('testing deleting', () => {
   // arrange
-  const taskIndex = 0;
   const spy = jest.spyOn(ToDoController, 'removeToDo');
+  const taskIndex = 0;
 
   // act
-  ToDoController.removeToDo(taskIndex);
+
+  beforeEach(() => {
+    ToDoController.removeToDo(taskIndex);
+  });
 
   // assert
-  test('remove to do should be called', () => {
+  it('remove to do should be called', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  test('it should remoe item from the list', () => {
+  it('it should remove item from the list', () => {
     expect(ToDoController.todos.length).toBe(0);
   });
 });

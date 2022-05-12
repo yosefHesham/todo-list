@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652353158116" clover="3.2.0">
-  <project timestamp="1652353158116" name="All files">
-    <metrics statements="34" coveredstatements="20" conditionals="7" coveredconditionals="4" methods="12" coveredmethods="7" elements="53" coveredelements="31" complexity="0" loc="34" ncloc="34" packages="1" files="4" classes="4"/>
-    <file name="json_handler.js" path="C:\Users\pascal\Desktop\microverse\pair\todo-list\modules\json_handler.js">
+<coverage generated="1652355093532" clover="3.2.0">
+  <project timestamp="1652355093532" name="All files">
+    <metrics statements="34" coveredstatements="25" conditionals="7" coveredconditionals="6" methods="12" coveredmethods="8" elements="53" coveredelements="39" complexity="0" loc="34" ncloc="34" packages="1" files="4" classes="4"/>
+    <file name="json_handler.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/json_handler.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="1" count="2" type="stmt"/>
+      <line num="1" count="4" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
     </file>
-    <file name="storage.js" path="C:\Users\pascal\Desktop\microverse\pair\todo-list\modules\storage.js">
+    <file name="storage.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/storage.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="2" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
     </file>
-    <file name="todo-controller.js" path="C:\Users\pascal\Desktop\microverse\pair\todo-list\modules\todo-controller.js">
-      <metrics statements="27" coveredstatements="13" conditionals="6" coveredconditionals="3" methods="7" coveredmethods="2"/>
+    <file name="todo-controller.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/todo-controller.js">
+      <metrics statements="27" coveredstatements="18" conditionals="6" coveredconditionals="5" methods="7" coveredmethods="3"/>
       <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
       <line num="7" count="1" type="stmt"/>
       <line num="9" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
       <line num="19" count="1" type="stmt"/>
       <line num="20" count="1" type="stmt"/>
-      <line num="22" count="0" type="stmt"/>
-      <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="28" count="0" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
       <line num="33" count="1" type="stmt"/>
       <line num="34" count="0" type="stmt"/>
       <line num="36" count="0" type="stmt"/>
@@ -42,11 +42,11 @@
       <line num="49" count="0" type="stmt"/>
       <line num="50" count="0" type="stmt"/>
     </file>
-    <file name="todo-item.js" path="C:\Users\pascal\Desktop\microverse\pair\todo-list\modules\todo-item.js">
+    <file name="todo-item.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/todo-item.js">
       <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
