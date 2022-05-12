@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.03% </span>
+                <span class="strong">44.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/29</span>
+                <span class='fraction'>13/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>2/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">48.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/27</span>
+                <span class='fraction'>13/27</span>
             </div>
         
             
@@ -122,20 +122,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -145,7 +146,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -166,7 +167,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,21 +176,22 @@ import ToDoItem from './todo-item.js';
 &nbsp;
 class ToDoController {
   static todos = getToDos() ?? []
+&nbsp;
   static #incrementor = this.todos.length;
-  
+&nbsp;
   static addTodo = (description) =&gt; {
-    console.log("Adding")
+    console.log('Adding');
     this.#incrementor += 1;
     const newTodo = new ToDoItem(this.#incrementor, description);
     this.todos.push(newTodo);
     storeToDos(this.todos);
   }
 &nbsp;
-<span class="fstat-no" title="function not covered" >  st</span>atic removeToDo(index) {
-<span class="cstat-no" title="statement not covered" >    if (index === this.#incrementor - 1) {</span>
-<span class="cstat-no" title="statement not covered" >      this.todos.splice(index, 1);</span>
-<span class="cstat-no" title="statement not covered" >      this.#incrementor -= 1;</span>
-    } else {
+  static removeToDo(index) {
+    if (index === this.#incrementor - 1) {
+      this.todos.splice(index, 1);
+      this.#incrementor -= 1;
+    } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >      this.todos.forEach(<span class="fstat-no" title="function not covered" >(t</span>odo) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        if (todo.index &gt; index) {</span>
 <span class="cstat-no" title="statement not covered" >          todo.index -= 1;</span>
@@ -199,7 +200,7 @@ class ToDoController {
 <span class="cstat-no" title="statement not covered" >      this.todos.splice(index, 1);</span>
 <span class="cstat-no" title="statement not covered" >      this.#incrementor -= 1;</span>
     }
-<span class="cstat-no" title="statement not covered" >    storeToDos(this.todos);</span>
+    storeToDos(this.todos);
   }
 &nbsp;
 static editDescription = <span class="fstat-no" title="function not covered" >(i</span>ndex, description) =&gt; {
@@ -224,7 +225,6 @@ static editDescription = <span class="fstat-no" title="function not covered" >(i
 }
 &nbsp;
 export default ToDoController;
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -232,7 +232,7 @@ export default ToDoController;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu May 12 2022 12:17:36 GMT+0200 (Eastern European Standard Time)
+                at Thu May 12 2022 12:59:18 GMT+0200 (South Africa Standard Time)
             </div>
         <script src="prettify.js"></script>
         <script>

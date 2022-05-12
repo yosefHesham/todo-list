@@ -3,10 +3,11 @@ import ToDoItem from './todo-item.js';
 
 class ToDoController {
   static todos = getToDos() ?? []
+
   static #incrementor = this.todos.length;
-  
+
   static addTodo = (description) => {
-    console.log("Adding")
+    console.log('Adding');
     this.#incrementor += 1;
     const newTodo = new ToDoItem(this.#incrementor, description);
     this.todos.push(newTodo);
@@ -51,4 +52,3 @@ static clearCompletedTasks() {
 }
 
 export default ToDoController;
-
