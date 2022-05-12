@@ -7,7 +7,6 @@ class ToDoController {
   static #incrementor = this.todos.length;
 
   static addTodo = (description) => {
-    console.log('Adding');
     this.#incrementor += 1;
     const newTodo = new ToDoItem(this.#incrementor, description);
     this.todos.push(newTodo);
