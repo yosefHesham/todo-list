@@ -12,7 +12,7 @@ export const changeStatus = (event) => {
     event.target.nextElementSibling.style.textDecoration = 'none';
     event.target.nextElementSibling.style.color = 'black';
   }
-  const arrayOfNodes = Array.from(document.querySelector(".list").childNodes)
+  const arrayOfNodes = Array.from(document.querySelector('.list').childNodes);
   ToDoController.changeStatus(arrayOfNodes.indexOf(event.target.parentElement.parentElement));
 };
 const refreshCheckBoxListeners = () => {

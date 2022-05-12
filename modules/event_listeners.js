@@ -40,14 +40,14 @@ const editTask = (event) => {
      * @type {HTMLElement}
      */
     const parent = event.target.parentElement;
-    const list = document.querySelector(".list")
-    const arrayOfNodes = Array.from(list.childNodes)
+    const list = document.querySelector('.list');
+    const arrayOfNodes = Array.from(list.childNodes);
     const p = getElement(parent.previousElementSibling, '.todo-title ');
     p.textContent = event.target.value;
 
     parent.style.display = 'none';
     parent.previousElementSibling.style.display = 'flex';
-    editToDo(arrayOfNodes.indexOf(parent.parentElement ), event.target.value);
+    editToDo(arrayOfNodes.indexOf(parent.parentElement), event.target.value);
   }
 };
 
