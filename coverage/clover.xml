@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1652350656502" clover="3.2.0">
+  <project timestamp="1652350656502" name="All files">
+    <metrics statements="34" coveredstatements="16" conditionals="7" coveredconditionals="3" methods="12" coveredmethods="6" elements="53" coveredelements="25" complexity="0" loc="34" ncloc="34" packages="1" files="4" classes="4"/>
+    <file name="json_handler.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/json_handler.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+    </file>
+    <file name="storage.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/storage.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+    </file>
+    <file name="todo-controller.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/todo-controller.js">
+      <metrics statements="27" coveredstatements="9" conditionals="6" coveredconditionals="2" methods="7" coveredmethods="1"/>
+      <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="29" count="0" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="46" count="0" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+    </file>
+    <file name="todo-item.js" path="/home/yousef/Desktop/Microverse/module2/week2/todo-list/modules/todo-item.js">
+      <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

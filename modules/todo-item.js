@@ -5,5 +5,4 @@ class ToDoItem {
     this.completed = completed;
   }
 }
-
 export default ToDoItem;
