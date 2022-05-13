@@ -1,8 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
+
 # To DO list
 
 > Is a website to manage daily tasks
+
+![](todo-screen.png)
 
 
 ## Built With
@@ -43,6 +46,15 @@ To get a local copy up and running follow these simple example steps.
 👤 **yosefHesham**
 
 - GitHub: [@yosefHesham](https://github.com/yosefHesham)
+- LinkedIn:[yousef](https://www.linkedin.com/in/yousef-hesham-b132ba179/)
+
+## Contributers
+
+👤 **bizibPascal**
+ - GitHub: [@bizip](https://github.com/bizip) 
+ - Twitter: [@twitterhandle](https://twitter.com/BizimunguPasca9) 
+ - LinkedIn: [LinkedIn](www.linkedin.com/in/bizimungu)
+
 
 ## 🤝 Contributing
 
@@ -57,6 +69,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose code was used
+- Hat tip to my contributer [@bizip](https://github.com/bizip)
 - Inspiration
 - etc
 
