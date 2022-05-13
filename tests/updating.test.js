@@ -4,44 +4,64 @@
  */
 import ToDoController from "../modules/todo-controller";
 
+ToDoController.addTodo("newToDo")
+ToDoController.addTodo("newToDo1")
+ToDoController.addTodo("newToDo2")
+ToDoController.addTodo("newToDo3")
+ToDoController.addTodo("newToDo4")
+
+
+
 describe("Testing edit description", () => {
   // arrange
   const newDescription = "new description";
   const spyEdit = jest.spyOn(ToDoController, "editDescription")
-  beforeEach(() => {
-    ToDoController.addTodo("newItem");
-    ToDoController.editDescription(0, newDescription)
-  })
-
-  //assert
-  test("edit function  should be called", () => {
-    expect(spyEdit).toHaveBeenCalled()
-  });
-
+  
   test('it should edit the item with given indexe to the list', () => {
+    //acting
+    ToDoController.editDescription(0, newDescription)
+
+    //assert
     expect(ToDoController.todos[0].description).toBe(newDescription);
   });
 
 })
 
-describe("Editing the status of the description", () => {
-  // arrange 
-  const description = "new description";
-  const spyStatus = jest.spyOn(ToDoController, 'changeStatus');
+describe("Editing the status of the task", () => {
+  // arrange
   let oldStatus = false
-  beforeEach(() => {
-    ToDoController.addTodo("newItem");
     oldStatus = ToDoController.todos[0].completed
-    ToDoController.changeStatus(0);
-
-  })
-
-  // assert
-  test("It should call update status function", () => {
-    expect(spyStatus).toHaveBeenCalled();
-  });
 
   test("It should update status", () => {
+    // act
+    ToDoController.changeStatus(0);
+
+    // assert
     expect(ToDoController.todos[0].completed).toBe(!oldStatus);
+  })
+})
+
+describe("Clear all completed",() => {
+
+  // arrange
+  beforeEach(()=> {
+    ToDoController.changeStatus(1)
+    ToDoController.changeStatus(2)
+  })
+    
+
+   test("list should only have one item  should be challed", ()=> {
+     // act
+    ToDoController.clearCompletedTasks()
+    
+    let cleared = true;
+    ToDoController.todos.forEach(todo => {
+      if(todo.completed) {
+        cleared = false
+      }
+    })
+
+    // assert
+    expect(cleared).toBe(true);
   })
 })
