@@ -16,8 +16,7 @@ const showMore = (event) => {
   if (event.target.classList.contains('edit')) {
     event.target.parentElement.style.display = 'none';
     event.target.parentElement.nextElementSibling.style.display = 'flex';
-  }
-  else if(event.target.classList.contains('edit1')){
+  } else if (event.target.classList.contains('edit1')) {
     event.target.parentElement.parentElement.style.display = 'none';
     event.target.parentElement.parentElement.nextElementSibling.style.display = 'flex';
   }
