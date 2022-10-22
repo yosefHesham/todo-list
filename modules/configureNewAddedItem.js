@@ -1,6 +1,6 @@
-import { changeStatus } from './change_status';
-import getElement from './getElement';
+import { changeStatus } from './change_status.js';
 import { deleteTask, editTask, showMore } from './event_listeners.js';
+import getElement from './helpers/getElement.js';
 
 /**
  * @param {HTMLElement} newItem

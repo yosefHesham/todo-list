@@ -1,7 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import ToDoController from '../modules/todo-controller';
+
+import ToDoController from '../modules/controllers/todo-controller.js';
 
 ToDoController.addTodo('newToDo');
 ToDoController.addTodo('newToDo1');

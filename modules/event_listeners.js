@@ -1,5 +1,5 @@
-import ToDoController from './todo-controller.js';
-import getElement from './getElement.js';
+import ToDoController from './controllers/todo-controller.js';
+import getElement from './helpers/getElement.js';
 
 const removeToDo = (index) => {
   ToDoController.removeToDo(index);

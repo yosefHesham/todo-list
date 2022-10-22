@@ -1,7 +1,8 @@
 /**
  * @jest-environment jsdom
  */
-import ToDoController from '../modules/todo-controller';
+
+import ToDoController from '../modules/controllers/todo-controller.js';
 
 document.body.innerHTML = '<div class="list"></div>';
 

@@ -1,8 +1,8 @@
-import { getToDos, storeToDos } from './storage.js';
-import ToDoItem from './todo-item.js';
+import { getToDos, storeToDos } from '../helpers/storage.js';
+import ToDoItem from '../models/todo-item.js';
 
 class ToDoController {
-  static todos = getToDos() ?? []
+  static todos = getToDos() ?? [];
 
   static #incrementor = this.todos.length;
 
@@ -11,7 +11,7 @@ class ToDoController {
     const newTodo = new ToDoItem(this.#incrementor, description);
     this.todos.push(newTodo);
     storeToDos(this.todos);
-  }
+  };
 
   static removeToDo(index) {
     if (index === this.#incrementor - 1) {
@@ -29,25 +29,25 @@ class ToDoController {
     storeToDos(this.todos);
   }
 
-static editDescription = (index, description) => {
-  this.todos[index].description = description;
+  static editDescription = (index, description) => {
+    this.todos[index].description = description;
 
-  storeToDos(this.todos);
-}
+    storeToDos(this.todos);
+  };
 
-static changeStatus(index) {
-  this.todos[index].completed = !this.todos[index].completed;
-  storeToDos(this.todos);
-}
-
-static clearCompletedTasks() {
-  this.todos = this.todos.filter((e) => !e.completed);
-  for (let i = 0; i < this.todos.length; i += 1) {
-    this.todos[i].index = i + 1;
+  static changeStatus(index) {
+    this.todos[index].completed = !this.todos[index].completed;
+    storeToDos(this.todos);
   }
-  this.#incrementor = this.todos.length;
-  storeToDos(this.todos);
-}
+
+  static clearCompletedTasks() {
+    this.todos = this.todos.filter((e) => !e.completed);
+    for (let i = 0; i < this.todos.length; i += 1) {
+      this.todos[i].index = i + 1;
+    }
+    this.#incrementor = this.todos.length;
+    storeToDos(this.todos);
+  }
 }
 
 export default ToDoController;
